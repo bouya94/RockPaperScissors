@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rock,Paper,Scissors</title>
+</head>
+<body>
+    <script>
+        const rock = 1
+        const paper = 2
+        const scissors = 3
+        function getComputerChoice() {
+        let randomNumber = Math.floor(Math.random() * 3) + 1; 
+            if (randomNumber == 1) {
+                console.log(rock)
+            } else if (randomNumber == 2){
+                console.log(paper)
+            } else {
+                console.log(scissors)
+            }
+            
+        }
+        getComputerChoice();
+    </script>
+</body>
+</html>
