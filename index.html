@@ -6,21 +6,69 @@
 </head>
 <body>
     <script>
-        const rock = 1
-        const paper = 2
-        const scissors = 3
-        function getComputerChoice() {
-        let randomNumber = Math.floor(Math.random() * 3) + 1; 
-            if (randomNumber == 1) {
-                console.log(rock)
-            } else if (randomNumber == 2){
-                console.log(paper)
-            } else {
-                console.log(scissors)
-            }
-            
+
+      let winner;
+      let playerScore = 0;
+      let computerScore = 0;
+
+      function getComputerChoice() {
+        let choices = ['rock', 'paper', 'scissors'];
+        let randomChoice = choices[Math.floor(Math.random() * choices.length)];
+        return randomChoice;
+      }
+
+      function getPlayerChoice() {
+        let playerChoice = prompt('Type Rock, Paper or Scissors');
+        return playerChoice;
+      }
+      
+      function oneRound(playerSelection, computerSelection,) {
+      
+        if (playerSelection == computerSelection) {
+            return winner = 0;
+        }else if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
+        (playerSelection == 'paper' && computerSelection == 'rock') ||
+        (playerSelection == 'scissors' && computerSelection == 'paper')){
+         return winner = 1;
+          
+        }else{
+         return winner = 2;
         }
-        getComputerChoice();
+      }
+      function result(){
+        if(winner == 1){
+          console.log(`Player : ${++playerScore} PC: ${computerScore}`);
+        } else if (winner == 2) {
+          console.log(`Player : ${playerScore} PC: ${++computerScore}`);
+        } else {
+          console.log(`Player : ${playerScore} PC: ${computerScore}`);
+        }
+      }
+      function gameResult() {
+        if (playerScore > computerScore){
+          console.log('Player wins!');
+        }else if(playerScore < computerScore) {
+          console.log('PC wins!');
+        }else{
+          console.log('Tie game!');
+        }
+      }
+
+      function game() {
+        oneRound(getPlayerChoice(), getComputerChoice());
+        result();
+        oneRound(getPlayerChoice(), getComputerChoice());
+        result();
+        oneRound(getPlayerChoice(), getComputerChoice());
+        result();
+        oneRound(getPlayerChoice(), getComputerChoice());
+        result();
+        oneRound(getPlayerChoice(), getComputerChoice());
+        result();
+        gameResult();
+      }
+      game();
+
     </script>
 </body>
 </html>
