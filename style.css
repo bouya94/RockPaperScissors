@@ -1,0 +1,18 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+img {
+    height: 50px;
+    width: 50px;
+}
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+}

@@ -3,72 +3,16 @@
 <head>
     <meta charset="utf-8">
     <title>Rock,Paper,Scissors</title>
+    <script src="./js-file.js" defer></script>
+    <link rel="stylesheet" href ="./style.css">
 </head>
 <body>
-    <script>
-
-      let winner;
-      let playerScore = 0;
-      let computerScore = 0;
-
-      function getComputerChoice() {
-        let choices = ['rock', 'paper', 'scissors'];
-        let randomChoice = choices[Math.floor(Math.random() * choices.length)];
-        return randomChoice;
-      }
-
-      function getPlayerChoice() {
-        let playerChoice = prompt('Type Rock, Paper or Scissors');
-        return playerChoice;
-      }
-      
-      function oneRound(playerSelection, computerSelection,) {
-      
-        if (playerSelection == computerSelection) {
-            return winner = 0;
-        }else if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
-        (playerSelection == 'paper' && computerSelection == 'rock') ||
-        (playerSelection == 'scissors' && computerSelection == 'paper')){
-         return winner = 1;
-          
-        }else{
-         return winner = 2;
-        }
-      }
-      function result(){
-        if(winner == 1){
-          console.log(`Player : ${++playerScore} PC: ${computerScore}`);
-        } else if (winner == 2) {
-          console.log(`Player : ${playerScore} PC: ${++computerScore}`);
-        } else {
-          console.log(`Player : ${playerScore} PC: ${computerScore}`);
-        }
-      }
-      function gameResult() {
-        if (playerScore > computerScore){
-          console.log('Player wins!');
-        }else if(playerScore < computerScore) {
-          console.log('PC wins!');
-        }else{
-          console.log('Tie game!');
-        }
-      }
-
-      function game() {
-        oneRound(getPlayerChoice(), getComputerChoice());
-        result();
-        oneRound(getPlayerChoice(), getComputerChoice());
-        result();
-        oneRound(getPlayerChoice(), getComputerChoice());
-        result();
-        oneRound(getPlayerChoice(), getComputerChoice());
-        result();
-        oneRound(getPlayerChoice(), getComputerChoice());
-        result();
-        gameResult();
-      }
-      game();
-
-    </script>
+  <h3>Rock Paper Scissors Game</h3>
+  <div class="main">
+    <button id="rock"><img src="./1000_F_513609437_t0IVCHN3zt1lLkyIcAxpDtZQP7vVRIHI.jpg"></button>
+    <button id="paper"><img src="./3438368_61567.jpg"></button>
+    <button id="scissors"><img src="./1831492-tool-scissors-steel-equipment-stainless-steel.jpg"></button>
+  </div>
+<p></p>
 </body>
 </html>
