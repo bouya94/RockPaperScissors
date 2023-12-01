@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock, Paper, Scissors</title>
+    </head>
+    <body>
+        <script>
+            function getComputerChoice(){
+                const computerChoice = ['rock', 'paper', 'scissors'];
+                return computerChoice[Math.floor(Math.random()*computerChoice.length)];
+               
+                
+            }
+            let playerScore = 0;
+            let computerScore = 0;
+            let playerChoise;
+            function round(playerSelection, computerSelection){
+                playerSelection = prompt('Type your choice!');
+                if(playerSelection === computerSelection){
+                    console.log(`Tie! Score is Player: ${playerScore}  Computer:${computerScore}`)
+                }else if(playerSelection === 'rock' && computerSelection === 'scissors' ||
+                        playerSelection === 'paper' && computerSelection === 'rock' ||
+                        playerSelection === 'scissors' && computerSelection === 'paper'){
+                            ++playerScore;
+                            console.log(`Player wins! Score is Player: ${playerScore}  Computer:${computerScore}`);
+                         }else{
+                            ++computerScore;
+                            console.log(`Computer wins! Score is Player: ${playerScore}  Computer:${computerScore}`);
+                         }
+            }
+            function game(){
+                while(playerScore <5 && computerScore <5 ){
+                    round(playerChoise,getComputerChoice());
+                }
+            }
+            game();
+        </script>
+    </body>
+</html>
